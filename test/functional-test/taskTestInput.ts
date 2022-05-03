@@ -14,6 +14,7 @@ const testableEmptySolutionPath = path.join(testDataPath, 'emptySolution_0_1_0_0
 const solutionTestOutputRootDirectory = 'out/solution-test';
 const unpackedSolutionDirectory = `${solutionTestOutputRootDirectory}/unpacked-solution`;
 const packedSolutionDirectory = `${solutionTestOutputRootDirectory}/packed-solution`;
+const appsToInstallJson = path.join(testDataPath, 'appsToInstall.json');
 
 export const tasksToTest: TaskInfo[] =
   [
@@ -36,6 +37,13 @@ export const tasksToTest: TaskInfo[] =
     {
       name: 'who-am-i',
       path: '/tasks/whoami/whoami-v2',
+    },
+    {
+      name: 'install-app',
+      path: '/tasks/install-application/install-application-v2',
+      inputVariables: [
+        { name: 'ApplicationList', value: appsToInstallJson },
+      ]
     },
     {
       name: 'unpack-solution',
