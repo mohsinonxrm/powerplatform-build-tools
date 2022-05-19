@@ -43,7 +43,6 @@ describe("check solution test", () => {
 
     checkSolutionStub.should.have.been.calledOnceWithExactly({
       credentials: credentials,
-      environmentUrl: mockEnvironmentUrl,
       fileLocation: { name: 'FileLocation', required: false, defaultValue: 'localFiles' },
       solutionPath: { name: 'FilesToAnalyze', required: false, defaultValue: '**\\*.zip' },
       solutionUrl: { name: 'FilesToAnalyzeSasUri', required: false, defaultValue: undefined },
@@ -54,8 +53,7 @@ describe("check solution test", () => {
       errorThreshold: { name: 'ErrorThreshold', required: false, defaultValue: '0' },
       failOnAnalysisError: { name: 'FailOnPowerAppsCheckerAnalysisError', required: false, defaultValue: true },
       outputDirectory: { name: 'ArtifactDestinationName', required: false, defaultValue: "CodeAnalysisLogs" },
-      useDefaultPAEndpoint: { name: 'UseDefaultPACheckerEndpoint', required: false, defaultValue: true },
-      customPAEndpoint: { name: 'CustomPACheckerEndpoint', required: true, defaultValue: '' }
+      customPAEndpoint: { name: 'CustomPACheckerEndpoint', required: true, defaultValue: undefined }
     }, new BuildToolsRunnerParams(), new BuildToolsHost());
   });
 });

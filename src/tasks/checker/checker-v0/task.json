@@ -66,19 +66,9 @@
       "helpMarkDown": "Environment url this task targets; default is the pipeline variable that e.g. the CreateEnvironment task has set before."
     },
     {
-      "name": "UseDefaultPACheckerEndpoint",
-      "label": "Use default Power Apps Checker endpoint",
-      "type": "boolean",
-      "required": false,
-      "defaultValue": true,
-      "helpMarkDown": "If true, the Service Connection's geo location determines location of Power Apps Checker endpoint."
-    },
-    {
       "name": "CustomPACheckerEndpoint",
       "label": "Specify a custom URL as Power Apps Checker endpoint",
       "type": "string",
-      "visibleRule": "UseDefaultPACheckerEndpoint = false",
-      "defaultValue": "",
       "required": true,
       "helpMarkDown": "Use a custom Power Apps Checker endpoint location independent of the Service Connection's location, e.g.: https://japan.api.advisor.powerapps.com/"
     },
